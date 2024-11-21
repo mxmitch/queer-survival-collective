@@ -10,7 +10,7 @@ const App = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/kanban" element={<KanbanBoard />} />
+        <Route path="/kanban" element={<KanbanBoard boardId="4DBfMPf6"/>} />
       </Routes>
     </Router>
   );
