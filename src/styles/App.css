@@ -1,0 +1,158 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f5f7; /* Trello's background color */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+}
+
+/* Main board container */
+.board {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  width: 100%;
+}
+
+/* Column container styles */
+.columns {
+  display: flex;
+  flex-grow: 1;
+  gap: 20px;
+  overflow-x: auto; /* Allow horizontal scrolling */
+  padding-bottom: 10px;
+  height:100vh;
+}
+
+/* Column styling */
+.column {
+  background-color: #ebecf0; /* Light blue column color */
+  border-radius: 6px;
+  width: 300px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 100%;
+  transition: all 0.2s ease-in-out;
+  flex-grow: 1; /* Columns grow to take equal space */
+  height: 100%; /* Make columns fill the container */
+  overflow-y: auto; /* Allow scrolling if there are too many cards */
+}
+
+/* Column header styles */
+.column-header {
+  font-weight: bold;
+  color: #333;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+/* Card container within the column */
+.cards {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 10px;
+}
+
+/* Individual card styling */
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Hover effect on cards */
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Add a scrollable view to the cards area */
+.cards {
+  max-height: 80vh; /* Allow cards to scroll inside the column */
+  overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+  .board {
+    width: 90%;
+  }
+
+  .columns {
+    flex-direction: column;
+    gap: 10px;
+    overflow-x: visible;
+  }
+
+  .column {
+    width: 100%;
+  }
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  width: 300px;
+}
+
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.modal-content button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modal-content button[type="button"] {
+  background-color: #f44336;
+}
+
+.modal-content button:hover {
+  background-color: #45a049;
+}
+
+.modal-content button[type="button"]:hover {
+  background-color: #e53935;
+}
+
